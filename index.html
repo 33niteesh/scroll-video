@@ -26,9 +26,6 @@ p font-family helvetica {
     <script>
     var vid = document.getElementById('v0');
     vid.pause();
-    window.onscroll = function(){
-    vid.pause();
-    };
     setInterval(function(){
     vid.currentTime = window.pageYOffset/350;
     }, 80);
