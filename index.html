@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            #set-height {
+  display: block;
+  height: 10500px;
+}
+#v0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+p font-family helvetica {
+  font-size: 24px;
+}
+        </style>
+    </head>
+<body>
+    <div id="set-height"></div>
+    <p id="time"></p>
+    <video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
+      <source src="./a.mp4" type="video/webm; codecs=&quot;vp8, vorbis&quot;"></source>
+      <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+    </video>
+    <script>
+    var vid = document.getElementById('v0');
+    vid.pause();
+    window.onscroll = function(){
+    vid.pause();
+    };
+    setInterval(function(){
+    vid.currentTime = window.pageYOffset/350;
+    }, 80);
+    </script>
+  </body>
+  </html>
